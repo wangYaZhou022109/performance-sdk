@@ -1,0 +1,35 @@
+{
+  "name": "@rouchi/performance",
+  "version": "1.0.20",
+  "description": "利用浏览器的performance进行前端性能数据采集",
+  "main": "dist/performance.umd.js",
+  "moudule": "dist/performance.esm.js",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c rollup.config.js",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "performance",
+    "timing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.rouchi.com:10022/wangyazhou/performance.git"
+  },
+  "author": "wangyazhou",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}
