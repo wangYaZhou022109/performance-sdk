@@ -1,6 +1,6 @@
 {
   "name": "performance-sdk",
-  "version": "0.0.1",
+  "version": "1.0.4",
   "description": "利用浏览器的performance进行前端性能数据采集",
   "main": "dist/performance.umd.js",
   "moudule": "dist/performance.esm.js",

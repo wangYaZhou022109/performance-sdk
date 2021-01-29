@@ -19,32 +19,26 @@
 Using npm:
 
 ```bash
-$ npm install @@rouchi/performance --save
+$ npm install performance-sdk --save
 ```
 main.js入口文件引入:
 ```js
-import JYperformance from '@rouchi/performance'
+import Performance from 'performance-sdk'
 
 if (process.env.NODE_ENV === 'production') { // development环境下不建议频繁上报
-    new JYperformance({
+    new Performance({
+      url: 'https://xxx.com/log/', // 上报服务端url
+      params: { // params中可以通过post方式传入服务端的额外参数，
+        log_level: 'INFO', // 级别
+        timestamp: Date.now(), // 上报时间
         application: 'xxx', // 项目名
         platform: 'web', // 平台
-        env: 'xxx' // 环境
+        env:  'dev', // 环境
+        content: 'content' // 上报页面性能指标字段，可以指定任意字符串类型，默认content字段
+      },
     }).start()
 }
 ```
-
-main.js入口文件引入:
-```js
-if (process.env.NODE_ENV === 'production' && window.Performance) { // development环境下不建议频繁上报
-    new window.Performance({
-        application: 'xxx', // 项目名
-        platform: 'web', // 平台
-        env: 'xxx' // 环境
-    }).start()
-}
-```
-
 
 ### 采集的数据说明
 

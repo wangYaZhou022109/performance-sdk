@@ -1,8 +1,9 @@
 
 class Performance {
-  constructor(option) {
+  constructor(option = {}) {
     this.timing = {}
-    this.env = option.env || 'prod'
+    this.option = option
+    this.env = option.env
     this.basicOption = {
       action: 'error',
       category: 'common',
@@ -82,10 +83,10 @@ class Performance {
 
   //发送数据到后端
   async send () {
-    const url = `https://xxx.com/error/${this.basicOption.application}/${this.basicOption.platform}.do` // 这里根据后端接收参数协议来定义
+    const url = this.option.url
     const params = {
-      ...this.basicOption,
-      content: { ...this.timing, environment: this.env }
+      ...this.option.params,
+      [this.option.content || 'content']: { ...this.timing, environment: this.option.env }
     }
     await ajax(url, 'POST', JSON.stringify(params))
   }

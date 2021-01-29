@@ -11,9 +11,15 @@
 <script>
   window.onload=() => {
     new Performance({
-      application: 'xxx', // 项目名
-      platform: 'web', // 平台
-      env:  'dev'
+      url: `https://xxx.com/log/`, // 上报服务端url
+      params: { // params中可以通过post方式传入服务端的额外参数，
+        log_level: 'INFO', // 级别
+        timestamp: Date.now(), // 上报时间
+        application: 'xxx', // 项目名
+        platform: 'web', // 平台
+        env:  'dev', // 环境
+        content: 'content' // 上报页面性能指标字段，可以指定任意字符串类型，默认content字段
+      },
     }).start()
   }
 </script>
