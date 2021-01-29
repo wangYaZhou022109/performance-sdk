@@ -1,12 +1,12 @@
 
-class JYperformance {
+class Performance {
   constructor(option) {
     this.timing = {}
     this.env = option.env || 'prod'
     this.basicOption = {
       action: 'error',
       category: 'common',
-      log_level: 'INFO',
+      log_level: 'INFO', // 级别
       timestamp: Date.now(),
       upload_timestamp: Date.now(),
       device_id: '',
@@ -82,7 +82,7 @@ class JYperformance {
 
   //发送数据到后端
   async send () {
-    const url = `https://logcollection-service.rouchi.com/error/${this.basicOption.application}/${this.basicOption.platform}.do`
+    const url = `https://xxx.com/error/${this.basicOption.application}/${this.basicOption.platform}.do` // 这里根据后端接收参数协议来定义
     const params = {
       ...this.basicOption,
       content: { ...this.timing, environment: this.env }
@@ -106,4 +106,4 @@ function ajax(url, method, params = {}){
   }    
 }
 
-export default JYperformance
+export default Performance

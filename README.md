@@ -27,22 +27,18 @@ import JYperformance from '@rouchi/performance'
 
 if (process.env.NODE_ENV === 'production') { // development环境下不建议频繁上报
     new JYperformance({
-        application: 'crm_performance.pc', // 项目
+        application: 'xxx', // 项目名
         platform: 'web', // 平台
         env: 'xxx' // 环境
     }).start()
 }
 ```
-Using cdn:
 
-```html
-<script src="https://common-static-cdn.jingyupeiyou.com/vendor/performance/performance-1.0.20.umd.js"></script>
-```
 main.js入口文件引入:
 ```js
-if (process.env.NODE_ENV === 'production' && window.JYperformance) { // development环境下不建议频繁上报
-    new window.JYperformance({
-        application: 'crm_performance.pc', // 项目
+if (process.env.NODE_ENV === 'production' && window.Performance) { // development环境下不建议频繁上报
+    new window.Performance({
+        application: 'xxx', // 项目名
         platform: 'web', // 平台
         env: 'xxx' // 环境
     }).start()
