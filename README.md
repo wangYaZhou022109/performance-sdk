@@ -1,4 +1,4 @@
-# performance
+# 前端页面性能监控sdk，借助浏览器performance开发
 
 
 ### 浏览器兼容性
